@@ -1,13 +1,12 @@
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
-public static int[] arrayStats(int[] nums) {
-    int min = Arrays.stream(nums).min().orElse(0);
-    int max = Arrays.stream(nums).max().orElse(0);
-    int sum = Arrays.stream(nums).sum();
-    return new int[]{min, max, sum};
-}
-// Ho usato degli stream per evitare il ciclo manuale.
-
+    public static List<String> asUppercase(List<String> words) {
+        return words.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+    }
 }
